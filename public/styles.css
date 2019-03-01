@@ -75,30 +75,55 @@ body {
   opacity: 0.2;
 }
 .splashbox {
-  height: 67%;
-  max-height: 330px;
-  margin: 40px auto;
-  margin-top: 10%;
-  width: 70%;
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto; 
+  height: 50%;
+  width: 67%;
   border: 6px solid rgb(25,75,180);
   background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 3%, rgba(255, 255, 255, 0.5) 97%, rgba(0, 0, 0, 0.5) 100%);
   transform: skew(-20deg, -9deg);
+  animation: jiggle 4s linear infinite;
 }
-.splashbox h1 {
+.splashbox:hover {
+  animation-play-state: paused;
+}
+.splashtext {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  height: 30%;
+  width: 50%;
+  z-index: 1;
+  font-size: 24px;
+  overflow: hidden;
+}
+.splashtext h1 {
   font-size: 36px;
   color: rgb(225,145,130);
   text-shadow: 1px 1px black;
 }
-.splashtext {
-  transform: skew(20deg, 9deg);
-  margin: 70px;
-  height: 175px;
-  font-size: 24px;
-  overflow: hidden;
+@keyframes jiggle {
+  0%{transform: skew(-20deg, -9deg) rotateZ(0deg) scale(1, 1)}
+  12%{transform: skew(-20deg, -9deg) rotateZ(0.5deg) scale(1.005, 1)}
+  25%{transform: skew(-20deg, -8.5deg) rotateZ(1deg) scale(1, 1)}
+  37%{transform: skew(-20deg, -9deg) rotateZ(0.5deg) scale(1, 1.01)}
+  50%{transform: skew(-20.5deg, -9deg) rotateZ(0deg) scale(1, 1)}
+  63%{transform: skew(-20deg, -9deg) rotateZ(-0.5deg) scale(1.005, 1)}
+  75%{transform: skew(-20deg, -8.5deg) rotateZ(-1deg) scale(1, 1)}
+  87%{transform: skew(-20deg, -9deg) rotateZ(-0.5deg) scale(1, 1.01)}
+  100%{transform: skew(-20deg, -9deg) rotateZ(0deg) scale(1, 1)}
 }
 
+nav {
+  margin-top: 80vh;
+}
 nav span {
-  margin: 0px 20px;
+  margin: 0px 20px 0px 20px;
   border: 0.5px dotted rgb(25,75,180);
   padding: 5px;
   font-size: 22px;
@@ -140,6 +165,11 @@ nav span {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
+}
+.bubble:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 footer {
