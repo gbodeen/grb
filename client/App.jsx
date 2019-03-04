@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Bubbles from './Bubbles';
 import Footer from './Footer';
+import './styles.scss';
 
 const App = () => {
   return (
