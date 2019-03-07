@@ -13,7 +13,7 @@ const App = () => {
         </div>
         <div className="splashtext">
           <h1>Welcome!</h1>
-          <p>My name is Gabriel Bodeen. </p>
+          <p>I'm Gabriel Bodeen. </p>
           <p>
             I'm a full stack software engineer
             who builds tools to help people cooperate better.

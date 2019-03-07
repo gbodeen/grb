@@ -50,6 +50,8 @@ table {
 }
 
 /* ------------------------------------- */
+$maxjiggles: 50;
+
 $colors: (
   background: rgb(255, 203, 5),
   border: rgb(25,75,180),
@@ -131,7 +133,7 @@ body {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 3%, rgba(255, 255, 255, 0.5) 97%, rgba(0, 0, 0, 0.5) 100%);
     @include skewangle;
   }
-  // animation: jiggle 4s linear infinite;
+  animation: jiggle (1s * $maxjiggles) linear infinite;
   &:hover {
     animation-play-state: paused;
   }
@@ -161,16 +163,15 @@ body {
   }
 }
 
+@function centrnd($n) {
+  @return (random(201) - 101) * $n / 100;
+}
+
 @keyframes jiggle {
-  0%{transform: skew(-20deg, -9deg) rotateZ(0deg) scale(1, 1)}
-  12%{transform: skew(-20deg, -9deg) rotateZ(0.5deg) scale(1.005, 1)}
-  25%{transform: skew(-20deg, -8.5deg) rotateZ(1deg) scale(1, 1)}
-  37%{transform: skew(-20deg, -9deg) rotateZ(0.5deg) scale(1, 1.01)}
-  50%{transform: skew(-20.5deg, -9deg) rotateZ(0deg) scale(1, 1)}
-  63%{transform: skew(-20deg, -9deg) rotateZ(-0.5deg) scale(1.005, 1)}
-  75%{transform: skew(-20deg, -8.5deg) rotateZ(-1deg) scale(1, 1)}
-  87%{transform: skew(-20deg, -9deg) rotateZ(-0.5deg) scale(1, 1.01)}
-  100%{transform: skew(-20deg, -9deg) rotateZ(0deg) scale(1, 1)}
+  @for $i from 0 through $maxjiggles {
+    $multiplier: 100% / $maxjiggles;
+    #{$i * $multiplier} {transform: skew(1deg * centrnd(2), 1deg * centrnd(2)) rotateZ(1deg * centrnd(2)) scale(1 + centrnd(0.01), 1 + centrnd(0.01))}
+  }
 }
 
 nav {
