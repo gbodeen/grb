@@ -52,7 +52,7 @@ body {
   @include fullscreen;
   content: "";
   z-index: -1;
-  background-image: url('pics/skyline-small.png');
+  background-image: url('../pics/skyline-small.png');
   background-position-x: center;
   background-position-y: bottom;
   background-size: cover;

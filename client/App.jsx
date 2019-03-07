@@ -5,7 +5,7 @@ import Splash from './Splash';
 // import Blog from './Blog';
 // import Games from './Games';
 // import Tools from './Tools';
-import './styles.scss';
+import './styles/styles.scss';
 
 const App = () => {
   const [page, setPage] = useState('splash');
