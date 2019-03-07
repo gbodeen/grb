@@ -1,33 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import Bubbles from './Bubbles';
-import Footer from './Footer';
+import Splash from './Splash';
+// import AboutMe from './AboutMe';
+// import Blog from './Blog';
+// import Games from './Games';
+// import Tools from './Tools';
 import './styles.scss';
 
 const App = () => {
-  return (
-    <>
-      <div className="splashpage">
-        <div className="skewbox-wrapper">
-          <div className="skewbox" />
-        </div>
-        <div className="splashtext">
-          <h1>Welcome!</h1>
-          <p>I'm Gabriel Bodeen. </p>
-          <p>
-            I'm a full stack software engineer
-            who builds tools to help people cooperate better.
-          </p>
-        </div>
-        <nav><span>link&nbsp;1</span><span>link&nbsp;2</span><span>link&nbsp;3</span><span>link&nbsp;4</span></nav>
-      </div>
-      {/* <div className="bluerow"></div> */}
-      {/* <div className="whitefield">
-        <Bubbles />
-      </div>
-      <Footer /> */}
-    </>
-  )
+  const [page, setPage] = useState('splash');
+
+  switch (page) {
+    case 'splash': return <Splash />;
+    case 'aboutme': return <AboutMe />;
+    case 'blog': return <Blog />;
+    case 'games': return <Games />;
+    case 'tools': return <Tools />;
+    default: return <Splash />;
+  }
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));

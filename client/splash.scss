@@ -1,5 +1,3 @@
-$maxjiggles: 50;
-
 $colors: (
   background: rgb(255, 203, 5),
   border: rgb(25,75,180),
@@ -37,12 +35,15 @@ $colors: (
   padding: 3px;
 }
 
+// ----------------------------------------------------
 
 body {
   background-color: color(background);  
   text-align: center;
   font-family: 'Josefin Sans', sans-serif;
 }
+
+// ----------------------------------------------------
 
 .splashpage {
   @include fullscreen;
@@ -58,12 +59,23 @@ body {
   opacity: 0.2;
 }
 
+// ----------------------------------------------------
 
 @mixin skewangle {
   @for $i from 1 through 20 {
     @media (min-width: 200px + (25px * $i)) {
         transform: skew(-0.8deg * $i, -0.5deg * $i);
     }
+  }
+}
+@function centrnd($n) {
+  @return (random(201) - 101) * $n / 100;
+}
+$maxjiggles: 50;
+@keyframes jiggle {
+  @for $i from 0 through $maxjiggles {
+    $multiplier: 100% / $maxjiggles;
+    #{$i * $multiplier} {transform: skew(1deg * centrnd(2), 1deg * centrnd(2)) rotateZ(1deg * centrnd(2)) scale(1 + centrnd(0.01), 1 + centrnd(0.01))}
   }
 }
 .skewbox-wrapper {
@@ -80,11 +92,13 @@ body {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0.5) 3%, rgba(255, 255, 255, 0.5) 97%, rgba(0, 0, 0, 0.5) 100%);
     @include skewangle;
   }
-  animation: jiggle (1s * $maxjiggles) linear infinite;
+  animation: jiggle (1s * $maxjiggles) linear infinite alternate;
   &:hover {
     animation-play-state: paused;
   }
 }
+
+// ----------------------------------------------------
 
 .splashtext {
   position: absolute;
@@ -110,16 +124,7 @@ body {
   }
 }
 
-@function centrnd($n) {
-  @return (random(201) - 101) * $n / 100;
-}
-
-@keyframes jiggle {
-  @for $i from 0 through $maxjiggles {
-    $multiplier: 100% / $maxjiggles;
-    #{$i * $multiplier} {transform: skew(1deg * centrnd(2), 1deg * centrnd(2)) rotateZ(1deg * centrnd(2)) scale(1 + centrnd(0.01), 1 + centrnd(0.01))}
-  }
-}
+// ----------------------------------------------------
 
 nav {
   position: absolute;
