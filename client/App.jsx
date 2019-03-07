@@ -2,24 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Bubbles from './Bubbles';
 import Footer from './Footer';
+import './styles.scss';
 
 const App = () => {
   return (
     <>
       <div className="splashpage">
-        <div className="splashbox">
-          <div className="splashtext">
-            <h1>Welcome</h1>
-            <p>Inclusive, shared vocabulary; thought leadership inclusion, and cultivate theory of change disrupt academic. Gender rights, systems thinking co-create, shared unit of analysis engaging paradigm humanitarian. Changemaker program area radical compelling LGBTQ+ framework innovate. State of play, resist academic; shine policymaker catalyze. Low-hanging fruit greenwashing, radical emerging indicators data the resistance effective altruism boots on the ground. Strengthening infrastructure vibrant outcomes compassion citizen-centered shine, incubator scalable. Game-changer; justice impact radical boots on the ground philanthropy issue outcomes. </p>
-          </div>
+        <div className="skewbox-wrapper">
+          <div className="skewbox" />
         </div>
-        <nav><span>link 1</span><span>link 2</span><span>link 3</span><span>link 4</span></nav>
+        <div className="splashtext">
+          <h1>Welcome!</h1>
+          <p>I'm Gabriel Bodeen. </p>
+          <p>
+            I'm a full stack software engineer
+            who builds tools to help people cooperate better.
+          </p>
+        </div>
+        <nav><span>link&nbsp;1</span><span>link&nbsp;2</span><span>link&nbsp;3</span><span>link&nbsp;4</span></nav>
       </div>
-      <div className="bluerow"></div>
-      <div className="whitefield">
+      {/* <div className="bluerow"></div> */}
+      {/* <div className="whitefield">
         <Bubbles />
       </div>
-      <Footer />
+      <Footer /> */}
     </>
   )
 }
