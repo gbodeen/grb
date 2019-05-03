@@ -8,11 +8,11 @@ const Splash = () => {
           <div className="skewbox" />
         </div>
         <div className="splashtext">
-          <h1>Welcome!</h1>
-          <p>I'm Gabriel Bodeen. </p>
+          <p>Hi, I'm</p>
+          <h1>Gabriel Bodeen</h1>
           <p>
-            I'm a full stack software engineer
-            who builds tools to help people cooperate better.
+            I build tools to help
+            people cooperate better.
           </p>
         </div>
         <nav><span>About&nbsp;Me</span><span>Blog</span><span>Games</span><span>Tools</span></nav>
