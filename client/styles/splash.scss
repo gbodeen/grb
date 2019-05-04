@@ -3,9 +3,14 @@
 //   border: rgb(25,75,180),
 //   highlight: rgb(225,145,130)
 // );
+// $colors: (
+//   background: rgb(39, 33, 17),
+//   border: rgb(220, 231, 255),
+//   highlight: rgb(190, 29, 0)
+// );
 $colors: (
-  background: rgb(39, 33, 17),
-  border: rgb(220, 231, 255),
+  background: rgb(255, 251, 239),
+  border: rgb(0, 23, 71),
   highlight: rgb(190, 29, 0)
 );
 
@@ -120,16 +125,15 @@ $maxjiggles: 50;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include textoutline;
   p {
     padding-top: 1vh;
     color: lighten(color(border), 58%);
-    @include textoutline;
   }
   h1 {
     display: inline;
     font-size: calc(24px + 2vw);
     color: color(highlight);
-    @include textoutline;
   }
 }
 
