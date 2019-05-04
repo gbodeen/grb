@@ -1,44 +1,10 @@
 @import 'reset';
 @import 'splash';
-
+@import 'aboutme';
 
 .bluerow {
   height: 20px;
   background: color(border);
-}
-
-.whitefield {
-  background: white;
-}
-
-.bubbles {
-  padding: 30px;
-  width: 90vw;
-  margin: 0px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-content: flex-start;
-}
-.bubble {
-  height: 150px;
-  line-height: 150px;
-  width: 150px;
-  border: 6px solid color(border);
-  border-radius: 150px;
-  margin: 30px;
-  font-size: 26px;
-  color: color(highlight);
-  text-shadow: 1px 1px black;
-  /* background: rgba(255, 203, 5, 0.5); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.3s;
-}
-.bubble:hover {
-  transform: scale(1.1);
-  transition: 0.3s;
 }
 
 footer {

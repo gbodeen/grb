@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Splash = () => {
+const Splash = ({ setPage }) => {
+
+  const addLinksInNav = () => {
+    document.querySelectorAll("nav span").forEach(span => {
+      span.addEventListener("click", () => setPage(span.innerText));
+    })
+  }
+  useEffect(addLinksInNav);
+
   return (
     <>
       <div className="splashpage">

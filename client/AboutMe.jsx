@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import BubbleSpread from 'BubbleSpread';
-import Bubble from 'Bubble';
+import BubbleSpread from './BubbleSpread';
+// import Bubble from './Bubble';
 
 const links = [
   'Bio',
