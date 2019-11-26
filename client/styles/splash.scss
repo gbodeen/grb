@@ -8,10 +8,15 @@
 //   border: rgb(220, 231, 255),
 //   highlight: rgb(190, 29, 0)
 // );
+// $colors: (
+//   background: rgb(255, 251, 239),
+//   border: rgb(0, 23, 71),
+//   highlight: rgb(190, 29, 0)
+// );
 $colors: (
-  background: rgb(255, 251, 239),
-  border: rgb(0, 23, 71),
-  highlight: rgb(190, 29, 0)
+  background: rgb(250, 250, 250),
+  border: rgb(7, 5, 138),
+  highlight: rgb(255, 203, 5)
 );
 
 @function color($color) {

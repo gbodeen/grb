@@ -35,6 +35,7 @@ module.exports = {
   // plugins: [new HtmlWebpackPlugin({ template: './client/index.html' })],
   resolve: {
     extensions: ['.js', '.jsx'],
+    symlinks: true
   },
   watch: true,
   mode: 'development'
