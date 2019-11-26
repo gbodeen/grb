@@ -3,3 +3,6 @@ node_modules
 pics
 images
 public
+dist
+.vscode
+package-lock.json

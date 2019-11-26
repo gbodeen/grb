@@ -13,9 +13,9 @@ const App = () => {
   switch (page) {
     case 'Splash': return <Splash setPage={setPage} />;
     case 'About Me': return <AboutMe />;
-    case 'Blog': return <Blog />;
-    case 'Games': return <Games />;
-    case 'Tools': return <Tools />;
+    // case 'Blog': return <Blog />;
+    // case 'Games': return <Games />;
+    // case 'Tools': return <Tools />;
     default: return <Splash setPage={setPage} />;
   }
 }

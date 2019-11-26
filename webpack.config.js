@@ -1,22 +1,15 @@
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
-  entry: __dirname + '/client/App.jsx',
+  entry: __dirname + '/src/client/App.tsx',
   output: {
-    path: __dirname + '/public/',
+    path: __dirname + '/dist/public/',
     filename: 'app.js'
   },
   module: {
     rules: [
       {
-        test: /\.jsx$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
-            plugins: ['@babel/plugin-proposal-class-properties']
-          }
-        }
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.s?css$/,
@@ -32,9 +25,8 @@ module.exports = {
       },
     ]
   },
-  // plugins: [new HtmlWebpackPlugin({ template: './client/index.html' })],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
     symlinks: true
   },
   watch: true,
